@@ -14,11 +14,15 @@ $(document).ready(function(){
     assignPage();
     
     for(i=0; i<= navArray.length-1; i++){
-		$(navArray[i]).click(function(){	
+        $(navArray[i]).click(function(){	
             event.preventDefault();
             for(i=0; i<= navArray.length-1 ;i++){
                 if('nav' + (i+1) == this.id){
-                    $("html, body").stop().animate({ scrollTop: $('#section'+ (i+1)).offset().top }, 500);
+                    if( window.innerWidth <= 880 ){
+                        $("html, body").stop().animate({ scrollTop: $('#section'+ (i+1)).offset().top - 50 }, 500);
+                    }else{
+                        $("html, body").stop().animate({ scrollTop: $('#section'+ (i+1)).offset().top }, 500);
+                    }
                 }
             }
         });
@@ -55,7 +59,7 @@ $(document).ready(function(){
         var $windowHeight = $(window).innerHeight();
         assignPage();
 
-    })
+    });
 
     function checkPage(){
         for( i = 0; i <= pageArray.length; i++ ){

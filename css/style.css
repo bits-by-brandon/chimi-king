@@ -132,6 +132,11 @@ header{
     letter-spacing: 1px;
 }
 
+#iconWrapper li:first-of-type img{
+    display: inline-block;
+    width: 55px;
+}
+
 .active{
     background-color: #FCCD40 !important;
 }
@@ -537,6 +542,10 @@ footer p{
         overflow: hidden;
         margin: 0;
         float: left;
+    }
+
+    #iconWrapper li:first-of-type img{
+        width: 45px;
     }
 
     #iconWrapper li:last-of-type{
